@@ -69,7 +69,6 @@ const string = "abcde";
 // та залежно від виду напою оголоси суму досплати.Використовувати switch.
 // const drink = prompt('chose your drink').toLocaleLowerCase()
 
-
 // function orderDrink(drinkName) {
 //     let price = 0
 //   switch (drinkName) {
@@ -87,7 +86,6 @@ const string = "abcde";
 //     }
 //     return `order ${price}UAH`;
 // }
-
 
 // function orderDrink(drinkName) {
 //     switch (drinkName) {
@@ -126,4 +124,31 @@ const string = "abcde";
 // let number = Number.parseInt(prompt('Ведіть число більше 100'))
 // while (number < 100) {
 //     number = Number.parseInt(prompt("Ведіть число більше 100"));
+// }
+//* Цикл for директива break і continue
+//TODO: 7 ===================================
+//Напишіть цикл, який виводить у консоль
+// числа від max до min за спаданням
+// Додайте усі парні числа від min до max
+
+// const max = 50;
+// const min = 23;
+// let total = 0;
+// for (let i = max; i >= min; i--) {
+//   //   console.log(i);
+//   if (i % 2 !== 0) {
+//     continue;
+//   }
+//   total += i;
+//   console.log(i);
+// }
+
+// console.log(total);
+
+//  Знайдіть число 49  у проміжку чисел від 1 до 100 та вийдіть з циклу.
+// for (let i = 1; i <= 100; i++) {
+//   if (i === 49) {
+//     console.log(i);
+//     break;
+//   }
 // }
