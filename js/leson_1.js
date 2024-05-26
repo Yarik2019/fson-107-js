@@ -67,26 +67,26 @@ const string = "abcde";
 //* Конструкція switch
 // Запитай користувача у модальному вікні, який з напоїв він бажає придбати - "Кава", "Чай" чи "Сік",
 // та залежно від виду напою оголоси суму досплати.Використовувати switch.
-const drink = prompt('chose your drink').toLocaleLowerCase()
+// const drink = prompt('chose your drink').toLocaleLowerCase()
 
 
-function orderDrink(drinkName) {
-    let price = 0
-  switch (drinkName) {
-      case "кава":
-          price = 40;
-          break
-    case "чай":
-          price = 20
-          break
-    case "сік":
-          price = 30
-          break
-    default:
-      return "error";
-    }
-    return `order ${price}UAH`;
-}
+// function orderDrink(drinkName) {
+//     let price = 0
+//   switch (drinkName) {
+//       case "кава":
+//           price = 40;
+//           break
+//     case "чай":
+//           price = 20
+//           break
+//     case "сік":
+//           price = 30
+//           break
+//     default:
+//       return "error";
+//     }
+//     return `order ${price}UAH`;
+// }
 
 
 // function orderDrink(drinkName) {
@@ -97,9 +97,33 @@ function orderDrink(drinkName) {
 //         return "order sum 20UAH";
 //       case "сік":
 //             return "order sum 30UAH";
-//         default: 
+//         default:
 //             return 'error'
 //     }
 // }
 
-console.log(orderDrink(drink));
+// console.log(orderDrink(drink));
+
+// TODO: 6 ===================================
+// Напишіть цикл, який пропонує ввести
+// число більше 100
+// Якщо відвідувач ввів інше число - попросити
+// ввести ще раз і так далі.
+// Цикл має питати число, поки відвідувач не
+// введе число більше 100, або натисне кнопку
+// скасування в prompt
+
+// let index = 0
+// while (index <= 100) {
+//     console.log(index)
+//     index += 1
+// }
+
+// for (let i = 0; i <= 100; i++){
+//     console.log(i);
+// }
+
+// let number = Number.parseInt(prompt('Ведіть число більше 100'))
+// while (number < 100) {
+//     number = Number.parseInt(prompt("Ведіть число більше 100"));
+// }
