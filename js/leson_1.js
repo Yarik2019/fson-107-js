@@ -4,7 +4,7 @@
 // Перевірте, що першим символом цього рядка є буква 'a'.
 // Якщо це так - виведіть 'так', інакше виведіть 'ні'.
 
-const string = "abcde";
+const string = 'abcde';
 
 // if (string.startsWith("a")) {
 //   console.log("Yes");
@@ -152,3 +152,34 @@ const string = "abcde";
 //     break;
 //   }
 // }
+
+//TODO: 9 ===================================
+//  Виведіть методом console.log() зірочки від 1 до 7 штук у вигляді трикутника таким чино
+// *
+// **
+// ***
+// ****
+// *****
+let star = '*';
+for (let i = 1; i <= 7; i += 1) {
+  console.log(star);
+  star += '*';
+}
+
+//TODO: 10 ===================================
+//Якщо число ділитися на 3 повертати
+//fizz якщо ділитися на 5 повертати buzz
+//Якщо ділитися на 3 і на 5 повернути fizzbuzz
+
+const number = 30;
+for (let i = 1; i <= number; i += 1) {
+  if (i % 3 === 0 && i % 5 === 0) {
+    console.log('fizzbuzz');
+  } else if (i % 3 === 0) {
+    console.log('fizz');
+  } else if (i % 5 === 0) {
+    console.log('buzz');
+  } else {
+    console.log(i);
+  }
+}
