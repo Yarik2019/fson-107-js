@@ -35,7 +35,7 @@ const string = "abcde";
 // Якщо так, вивести в консоль "Число потрапляє в діапазон".
 // Якщо ні, вивести в консоль "Число не потрапляє в діапазон".
 
-// function checkNumber() { 
+// function checkNumber() {
 //     const number = prompt("Enter number: ");
 //     if (number >= 55 && number <= 99) {
 //         return "Число потрапляє в діапазон";
@@ -49,16 +49,57 @@ const string = "abcde";
 
 // const ageMaxim = 120;
 
-// function checkAge(age) { 
+// function checkAge(age) {
 //     if (age >= 0 && age <= 16) {
 //         return "kids";
 //     } else if (age >= 17 && age <= 60) {
 //         return "adults";
 //     } else if (age >= 61 && age <= 100) {
 //         return "pensions";
-//     } else { 
+//     } else {
 //         return "Error ";
 //     }
 // }
 
 // console.log(checkAge(ageMaxim));
+
+//TODO: 5 ===================================
+//* Конструкція switch
+// Запитай користувача у модальному вікні, який з напоїв він бажає придбати - "Кава", "Чай" чи "Сік",
+// та залежно від виду напою оголоси суму досплати.Використовувати switch.
+const drink = prompt('chose your drink').toLocaleLowerCase()
+
+
+function orderDrink(drinkName) {
+    let price = 0
+  switch (drinkName) {
+      case "кава":
+          price = 40;
+          break
+    case "чай":
+          price = 20
+          break
+    case "сік":
+          price = 30
+          break
+    default:
+      return "error";
+    }
+    return `order ${price}UAH`;
+}
+
+
+// function orderDrink(drinkName) {
+//     switch (drinkName) {
+//       case "кава":
+//         return "order sum 40UAH";
+//       case "чай":
+//         return "order sum 20UAH";
+//       case "сік":
+//             return "order sum 30UAH";
+//         default: 
+//             return 'error'
+//     }
+// }
+
+console.log(orderDrink(drink));
