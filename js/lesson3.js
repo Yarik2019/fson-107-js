@@ -52,8 +52,9 @@
 //! Array methods
 //TODO:=========task-01=================
 // Дано масив чисел [1, 2, 3, 4, 5]. Створіть новий масив, що містить квадрати кожного елементу вхідного масиву. Очікуваний результат: [1, 4, 9, 16, 25].
+// const getNewArray = (arr) => arr.map(number => number * number);
 
-// const res = getNewArray([1, 2, 3], 5);
+// const res = getNewArray([1, 2, 3, 4, 5]);
 // console.log(res);
 
 //TODO:=========task-02=================
@@ -65,6 +66,7 @@
 //   { id: 3, values: [7, 8, 9] },
 // ];
 
+// const flatArray = (arr) => arr.flatMap( element => element.values)
 // const res = flatArray(data);
 // console.log(res);
 
@@ -77,6 +79,8 @@
 //   { name: 'Bob', age: 19 },
 // ];
 
+// const checkAge = (arr) => arr.some( element => element.age < 20)
+
 // const res = checkAge(people);
 // console.log(res);
 
@@ -84,6 +88,8 @@
 //  Дано масив чисел [2, 4, 6, 8, 10]. Перевірте, чи є кожен елемент масиву парним. Очікуваний результат: true.
 
 // const numbers = [2, 4, 6, 8, 10];
+
+// const checkEvenArray = (arr) => arr.every( number => number % 2 === 0 )
 
 // const res = checkEvenArray(numbers);
 // console.log(res);
@@ -93,21 +99,29 @@
 
 // const numbers = [1, 2, 3, 4, 5];
 
-// const res = getNumber(arr, 3);
+// const getNumber = (arr, value) => arr.find( number => number > value)
+
+// const res = getNumber(numbers, 3);
 // console.log(res);
 
 //TODO:=========task-06=================
 // Відсортуйте масив чисел [4, 2, 5, 1, 3] у порядку зростання. Очікуваний результат: [1, 2, 3, 4, 5].
 
-// const numbersArray = [4, 2, 5, 1, 3];
+// const numbersArray = [4, 200, 5, 1, 3];
+
+// //const sortedArray = (arr) => arr.toSorted( (a, b) => a - b )
+// // const sortedArray = (arr) => arr.sort((a, b) => a - b); //брудний метод, мутує вхідні дані
+// const sortedArray = (arr) => [...arr].sort((a, b) => a - b);//вже не  мутує вхідні дані
 
 // const res = sortedArray(numbersArray);
 // console.log(res);
-
+// console.log(numbersArray);
 //TODO:===============task-07===============================
 // Відсортуйте масив рядків ["banana", "orange", "apple", "pear"] у порядку алфавіту. Очікуваний результат: ["apple", "banana", "orange", "pear"].
 
-// const stringArray = ['banana', 'orange', 'apple', 'pear'];
+// const stringArray = ['banana', 'orange', 'apple', 'pear']; 
+
+// const sortedArray = (arr) => arr.toSorted((a, b) => a.localeCompare(b));
 
 // const res = sortedArray(stringArray);
 // console.log(res);
