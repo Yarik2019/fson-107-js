@@ -146,22 +146,22 @@
 //TODO:=========task-09=================
 // Дано масив об'єктів {name: "John", age: 27}, {name: "Jane", age: 31}, {name: "Bob", age: 19}. Створіть новий масив, що містить тільки об'єкти, в яких вік більше 20 років. Очікуваний результат: [{name: "John", age: 27}, {name: "Jane", age: 31}]
 
-const user = [
-  { name: 'John', age: 27 },
-  { name: 'Jane', age: 31 },
-  { name: 'Bob', age: 19 },
-];
+// const user = [
+//   { name: 'John', age: 27 },
+//   { name: 'Jane', age: 31 },
+//   { name: 'Bob', age: 19 },
+// ];
 
-// const getAge = (arr, age) => arr.filter(element => element.age > age);
+// // const getAge = (arr, age) => arr.filter(element => element.age > age);
 
-const getAge = (arr, age) =>
-  arr
-    .filter(element => element.age > age)
-    .map(element => element.name)
-    .toSorted((a, b) => a.localeCompare(b));
+// const getAge = (arr, age) =>
+//   arr
+//     .filter(element => element.age > age)
+//     .map(element => element.name)
+//     .toSorted((a, b) => a.localeCompare(b));
 
-const res = getAge(user, 20);
-console.log(res);
+// const res = getAge(user, 20);
+// console.log(res);
 
 //TODO:=========task-10=================
 // Дано масив чисел [1, 2, 3, 4, 5]. Застосуйте метод reduce для обчислення суми елементів масиву
@@ -188,14 +188,46 @@ console.log(res);
 //TODO:=========task-01=================
 // Створити об'єкт, який представляє користувача. У об'єкті повинні бути наступні поля: ім'я, прізвище, вік, email та метод, який виводить повну інформацію про користувача.
 
+const user = { 
+    userName: "Mango",
+    lastName: "Fruit",
+    age: 25,
+    email: "mango@gmail.com",
+    getInfo() { 
+        console.log(`Info about user: ${this.userName}`);
+    },
+
+    modify(key, value) { 
+        if (key !== "userName" && key !== "lastName") {
+            return `${key} can not be modified`;
+        } else if (value[0] === value[0].toUpperCase() && value.length >= 3){
+            this[key] = value;
+         }
+        return this;
+    }
+}
+
+// const user2 = Object.create(user);
+// user2.userName = "Kiwi";
+// user2.getInfo();
+
+// // console.log(this);
+// user.getInfo();
+
+
+
 //TODO:=========task-02=================
 // Для обьекта "user", написати метод для зміни ім'я або прізвища(змінити можна лише якесь з цих полів, змінювати або додавати нові потрібно заборонити) з перевіркою на валідність даних(Перша літера має бути у верхньому реєстрі, довжина слова не менше 3 літер)
-
 // user.modify('firstName', 'Vlad');
 
+// console.log(user.modify('userName', 'vlad'));
 //TODO:=========task-03=================
 // Створити глобальну функцію для обьекта "user", що може додавати властивості об'єкту, в контексті якого вона буде викликана. Додати цю функцію як метод об'єкта user, та додати за допомогою неї властивість friends із значенням:
 
+// function addProperty(key, value) { 
+//     this[key] = value;
+// }
+// user.addProperty = addProperty;
 // user.addProperty('friends', [
 //   {
 //     firstName: 'Mary',
@@ -223,15 +255,21 @@ console.log(res);
 //  Викликати метод user.info() таким чином, щоб він вивів результатом  ({name: 'Bob', lactName: 'Lasso',age: 50, email: 'BodLasso@gmail.com'})
 
 // const obj = {
-//   name: 'Bob',
+//   userName: 'Bob',
 //   lastName: 'Lasso',
 //   age: 50,
 //   email: 'BodLasso@gmail.com',
 // };
 
+// user.getInfo.call(obj);
+
 //TODO:=========task-05=================
 //  Викличте функцію showFullName у контексті об'єкта user
-
+// function showFullName(message, number) {
+//     console.log(`${message}, ${this.userName}, ${this.lastName}, ${number}`);
+// }
+// showFullName.call(user, "Hello", 10);
+// showFullName.apply(obj, ["Hello", 20]);
 //TODO:=========task-06=================
 // Виправте помилки, щоб код працював
 
