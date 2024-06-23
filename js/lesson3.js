@@ -285,7 +285,7 @@ const user = {
 //   callback();
 // }
 
-// callAction(product.showPrice);
+// callAction(product.showPrice.bind(product));
 
 //! class
 //TODO:=================task-01=============================
@@ -302,23 +302,59 @@ const user = {
 // - `addItem`() - який додає предмет замовлення до масиву "items"
 // - `removeItem`() - який видаляє предмет замовленя з масиву "items"
 // ##### Додатково можна створити гетери та сетери для отримання номера столика, статусу замовлення та самого замовлення
+// class Order{
+//   #tableNumber;
+//   #items;
+//   #isPaid;
+//   constructor(tableNumber) {
+//     this.#tableNumber = tableNumber;
+//     this.#items = [];
+//     this.#isPaid = false;
+//   }
+//   calculateTotal() {
+//     return this.#items.reduce((total, item) => total += item.price, 0)
+//   }
+//   markAsPaid() {
+//     this.#isPaid = true;
+//   }
+//   addItem(item) {
+//     this.#items.push(item);
+//   }
+//   removeItem(itemName) {
+//     const index = this.#items.indexOf(itemName);
+//     if (index !== -1) {
+//       this.#items.splice(index, 1)
+//     }
+//   }
+//   get tableNumber() {
+//     return this.#tableNumber;
+//   }
+//   get isPaid() {
+//     return this.#isPaid;
+//   }
+// }
+// // #### Також потрібно створити клас `MenuItem`, який містить властивості `name` та `price` для предметів замовлення.
+// class MenuItem{
+//   constructor(name, price) {
+//     this.name = name;
+//     this.price = price;
+//   }
 
-// #### Також потрібно створити клас `MenuItem`, який містить властивості `name` та `price` для предметів замовлення.
-
-// Create menu items
+// }
+// // Create menu items
 // const item1 = new MenuItem('Burger', 10);
 // const item2 = new MenuItem('Fries', 5);
 // const item3 = new MenuItem('Drink', 2);
 
-// Create an order
+// // Create an order
 // const order = new Order(1);
 
-// Add items to the order
+// // Add items to the order
 // order.addItem(item1);
-// order.addItem(item2);
+// // order.addItem(item2);
 // order.addItem(item3);
 
-// Calculate the total and mark the order as paid
+// // Calculate the total and mark the order as paid
 // const total = order.calculateTotal();
 // order.markAsPaid();
 
