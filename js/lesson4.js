@@ -38,6 +38,36 @@ dom.prepend(divContainer);
 ** 4 - При події `submit`. Відміни поведінку браузера по змовчуванню. Дістань данні з інпуту і чек боксу, зроби перевірку, що інпут не порожній, також, що нажатий чек бокс у положення true, якщо користувач все виконав вірно, збери данні (userName) у обьект і виведи у консоль. У разі, якщо користувач не виконав одну із умов, виведи повідомлення. Також реалізуй додавання ім`я користувача у span, замість слова "Anonymous". Якщо користувач ввів ім`я, а потім видали, зроби так, щоб на місце повернулось дефолтне знаяення "Anonymous". При відправці форми, очисти інпут, верни чек бокс у положення false, верни дефолтне значення "Anonymous" у span.
  */
 
+const formEl = document.querySelector(".js-contact-form");
+
+// formEl.addEventListener("input", onFormInput);
+
+// function onFormInput(event){ 
+//   const inputValue = event.target.value.trim();
+//   if (inputValue.length > 6) {
+//     event.target.classList.add("success");
+//     event.target.classList.remove("error");
+
+//   } else { 
+//     event.target.classList.remove("success");
+//     event.target.classList.add("error");
+//   }
+// }
+
+// const inputField = document.querySelector(".js-username-input")
+// inputField.addEventListener("focus", onFocus);
+
+// function onFocus(event) {
+//   const target = event.target;
+
+//   !target.value.trim() ? target.style.outline = '3px solid red' : target.style.outline = '3px solid green';
+
+  // if (!target.value.trim()) {
+  //   target.style.outline = '3px solid red';
+  // } else { 
+  //   target.style.outline = '3px solid green';
+  // }
+}
 //TODO:=========task-03=================
 // Кнопка "Зменшити" робить квадрат меншим на 20 пікселів, кнопка "Збільшити" - робить більшим на 10 пікселів.
 
