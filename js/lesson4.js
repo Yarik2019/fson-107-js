@@ -1,6 +1,28 @@
 //TODO:=========task-01=================
 // Створіть контейнер div (з класом numberContainer )в HTML-документі та динамічно створіть 100 блоків (з класом number) наповнивши їх рандомними числами від 1 до 100 і додайте їх до контейнера div(numberContainer). Парні числа повинні мати зелений фон (додати клас even), Непарні числа - жовтий фон (додати клас odd).
 
+const divContainer = document.createElement("div");
+divContainer.classList.add("number-container");
+const dom = document.body;
+
+const boxs = 200;
+
+const randomNumber = () => Math.floor(Math.random() * 100) + 1;
+for (let i = 0; i < boxs; i++) {
+  const box = document.createElement("div");
+  const randoms = randomNumber();
+  box.classList.add("number");
+  box.textContent = randoms;
+  if (randoms % 2 === 0) {
+    box.classList.add("even");
+  } else {
+    box.classList.add("odd");
+  }
+  divContainer.appendChild(box);
+}
+
+dom.prepend(divContainer);
+
 //TODO:=========task-02=================
 /**
  *!  Form Events, Input, Focus, Blur and Submit.
@@ -24,29 +46,29 @@
 
 const films = [
   {
-    title: 'Tetris',
-    imgUrl: 'https://static.hdrezka.ac/i/2023/3/20/f509264b419fdmu53x38j.jpg',
-    id: 'film_1',
+    title: "Tetris",
+    imgUrl: "https://static.hdrezka.ac/i/2023/3/20/f509264b419fdmu53x38j.jpg",
+    id: "film_1",
   },
   {
-    title: 'Avatar: The Way of Water',
-    imgUrl: 'https://static.hdrezka.ac/i/2022/12/22/tc5e6b8212683gn66r84s.jpg',
-    id: 'film_2',
+    title: "Avatar: The Way of Water",
+    imgUrl: "https://static.hdrezka.ac/i/2022/12/22/tc5e6b8212683gn66r84s.jpg",
+    id: "film_2",
   },
   {
-    title: 'Operation Fortune: Ruse de guerre',
-    imgUrl: 'https://static.hdrezka.ac/i/2022/2/11/s0d53f6cf0ae0tq29m85l.jpg',
-    id: 'film_3',
+    title: "Operation Fortune: Ruse de guerre",
+    imgUrl: "https://static.hdrezka.ac/i/2022/2/11/s0d53f6cf0ae0tq29m85l.jpg",
+    id: "film_3",
   },
   {
-    title: 'Babylon',
-    imgUrl: 'https://static.hdrezka.ac/i/2022/12/25/z330b47a82209ww99w55a.jpg',
-    id: 'film_4',
+    title: "Babylon",
+    imgUrl: "https://static.hdrezka.ac/i/2022/12/25/z330b47a82209ww99w55a.jpg",
+    id: "film_4",
   },
   {
-    title: 'The Whale',
-    imgUrl: 'https://static.hdrezka.ac/i/2023/2/24/h23d8c65d734akd89q94c.jpg',
-    id: 'film_5',
+    title: "The Whale",
+    imgUrl: "https://static.hdrezka.ac/i/2023/2/24/h23d8c65d734akd89q94c.jpg",
+    id: "film_5",
   },
 ];
 
@@ -58,7 +80,7 @@ const films = [
 </li> */
 }
 
-const watchedFilms = ['film_2', 'film_4', 'film_5'];
+const watchedFilms = ["film_2", "film_4", "film_5"];
 
 //TODO:=========task-05======Modal window===========
 /**
