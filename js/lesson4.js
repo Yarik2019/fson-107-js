@@ -1,22 +1,22 @@
 //TODO:=========task-01=================
 // Створіть контейнер div (з класом numberContainer )в HTML-документі та динамічно створіть 100 блоків (з класом number) наповнивши їх рандомними числами від 1 до 100 і додайте їх до контейнера div(numberContainer). Парні числа повинні мати зелений фон (додати клас even), Непарні числа - жовтий фон (додати клас odd).
 
-const divContainer = document.createElement('div');
-divContainer.classList.add('number-container');
+const divContainer = document.createElement("div");
+divContainer.classList.add("number-container");
 const dom = document.body;
 
 const boxs = 200;
 
 const randomNumber = () => Math.floor(Math.random() * 100) + 1;
 for (let i = 0; i < boxs; i++) {
-  const box = document.createElement('div');
+  const box = document.createElement("div");
   const randoms = randomNumber();
-  box.classList.add('number');
+  box.classList.add("number");
   box.textContent = randoms;
   if (randoms % 2 === 0) {
-    box.classList.add('even');
+    box.classList.add("even");
   } else {
-    box.classList.add('odd');
+    box.classList.add("odd");
   }
   divContainer.appendChild(box);
 }
@@ -69,22 +69,22 @@ dom.prepend(divContainer);
 // }
 // }
 
-const inputFild = document.querySelector('.js-username-input');
-inputFild.addEventListener('blur', onBlur);
+const inputFild = document.querySelector(".js-username-input");
+inputFild.addEventListener("blur", onBlur);
 
 function onBlur(event) {
   const target = event.target;
 
   !target.value.trim()
-    ? (target.style.outline = '3px solid red')
-    : (target.style.outline = '3px solid green');
+    ? (target.style.outline = "3px solid red")
+    : (target.style.outline = "3px solid green");
 }
 
-const formEl = document.querySelector('.js-contact-form');
-const spanEl = document.querySelector('.js-username-output');
+const formEl = document.querySelector(".js-contact-form");
+const spanEl = document.querySelector(".js-username-output");
 
-formEl.addEventListener('submit', onSubmit);
-formEl.addEventListener('input', onInput);
+formEl.addEventListener("submit", onSubmit);
+formEl.addEventListener("input", onInput);
 
 function onSubmit(event) {
   event.preventDefault();
@@ -92,21 +92,21 @@ function onSubmit(event) {
   const userInput = event.currentTarget.elements.userName;
 
   if (!userInput.value.trim() || !checkBox) {
-    return alert('Введіть дані');
+    return alert("Введіть дані");
   }
 
   console.log({ userName: userInput.value.trim() });
   event.currentTarget.reset();
-  spanEl.textContent = 'Anonimus';
-  userInput.style.border = '1px solid #cccccc';
-  userInput.style.outline = 'none';
+  spanEl.textContent = "Anonimus";
+  userInput.style.border = "1px solid #cccccc";
+  userInput.style.outline = "none";
 }
 
 function onInput(event) {
   const inputValue = event.currentTarget.elements.userName.value.trim();
   spanEl.textContent = inputValue;
   if (!inputValue) {
-    spanEl.textContent = 'Anonimus';
+    spanEl.textContent = "Anonimus";
   }
 }
 
@@ -118,42 +118,46 @@ function onInput(event) {
 
 const films = [
   {
-    title: 'Tetris',
-    imgUrl: 'https://static.hdrezka.ac/i/2023/3/20/f509264b419fdmu53x38j.jpg',
-    id: 'film_1',
+    title: "Tetris",
+    imgUrl: "https://static.hdrezka.ac/i/2023/3/20/f509264b419fdmu53x38j.jpg",
+    id: "film_1",
   },
   {
-    title: 'Avatar: The Way of Water',
-    imgUrl: 'https://static.hdrezka.ac/i/2022/12/22/tc5e6b8212683gn66r84s.jpg',
-    id: 'film_2',
+    title: "Avatar: The Way of Water",
+    imgUrl: "https://static.hdrezka.ac/i/2022/12/22/tc5e6b8212683gn66r84s.jpg",
+    id: "film_2",
   },
   {
-    title: 'Operation Fortune: Ruse de guerre',
-    imgUrl: 'https://static.hdrezka.ac/i/2022/2/11/s0d53f6cf0ae0tq29m85l.jpg',
-    id: 'film_3',
+    title: "Operation Fortune: Ruse de guerre",
+    imgUrl: "https://static.hdrezka.ac/i/2022/2/11/s0d53f6cf0ae0tq29m85l.jpg",
+    id: "film_3",
   },
   {
-    title: 'Babylon',
-    imgUrl: 'https://static.hdrezka.ac/i/2022/12/25/z330b47a82209ww99w55a.jpg',
-    id: 'film_4',
+    title: "Babylon",
+    imgUrl: "https://static.hdrezka.ac/i/2022/12/25/z330b47a82209ww99w55a.jpg",
+    id: "film_4",
   },
   {
-    title: 'The Whale',
-    imgUrl: 'https://static.hdrezka.ac/i/2023/2/24/h23d8c65d734akd89q94c.jpg',
-    id: 'film_5',
+    title: "The Whale",
+    imgUrl: "https://static.hdrezka.ac/i/2023/2/24/h23d8c65d734akd89q94c.jpg",
+    id: "film_5",
   },
 ];
 
-const filmList = document.querySelector('.js-film-list')
+const filmList = document.querySelector(".js-film-list");
 
 function createMarkup(array) {
-  return array.map(film => `<li id="${film.id}">
+  return array
+    .map(
+      (film) => `<li id="${film.id}">
      <img src="${film.imgUrl}" alt="${film.title}" />
      <p>${film.title}</p>
-</li>`).join()
+</li>`
+    )
+    .join();
 }
 
-filmList.innerHTML = createMarkup(films)
+filmList.innerHTML = createMarkup(films);
 // Приклад елементу списку
 {
   /* <li id="${id}">
@@ -162,17 +166,16 @@ filmList.innerHTML = createMarkup(films)
 </li> */
 }
 
-const watchedFilms = ['film_2', 'film_4', 'film_5'];
+const watchedFilms = ["film_2", "film_4", "film_5"];
 
-watchedFilms.forEach(id => {
-  const film = filmList.querySelector(`#${id}`)
+watchedFilms.forEach((id) => {
+  const film = filmList.querySelector(`#${id}`);
   if (film) {
     film.style.opacity = 0.5;
   }
-}) 
+});
 
 //fff
-
 
 //TODO:=========task-05======Modal window===========
 /**
@@ -187,6 +190,42 @@ watchedFilms.forEach(id => {
   |============================
   
 */
+const btn = document.querySelector(".js-modal-open");
+btn.addEventListener("click", onClick);
+function onClick(event) {
+  const instance = basicLightbox.create(`
+     <div class="modal">
+  <button type="button" class="close-btn js-modal-close">
+    X
+  </button>
+
+  <form class="login-form js-modal__form">
+    <label>
+      Name
+      <input type="text" name="name" placeholder="enter your name" />
+    </label>
+    <label>
+      Email
+      <input type="email" name="email" placeholder="enter your email" />
+    </label>
+    <label>
+      Password
+      <input
+        type="password"
+        name="password"
+        placeholder="enter your password"
+      />
+    </label>
+    <button class="login-btn" type="submit">
+      Login
+    </button>
+  </form>
+</div>
+   
+`);
+
+  instance.show();
+}
 
 /**
   |============Розмітка для модального вікна================
