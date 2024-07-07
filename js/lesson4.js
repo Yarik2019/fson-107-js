@@ -144,6 +144,16 @@ const films = [
   },
 ];
 
+const filmList = document.querySelector('.js-film-list')
+
+function createMarkup(array) {
+  return array.map(film => `<li id="${film.id}">
+     <img src="${film.imgUrl}" alt="${film.title}" />
+     <p>${film.title}</p>
+</li>`).join()
+}
+
+filmList.innerHTML = createMarkup(films)
 // Приклад елементу списку
 {
   /* <li id="${id}">
@@ -153,6 +163,14 @@ const films = [
 }
 
 const watchedFilms = ['film_2', 'film_4', 'film_5'];
+
+watchedFilms.forEach(id => {
+  const film = filmList.querySelector(`#${id}`)
+  if (film) {
+    film.style.opacity = 0.5;
+  }
+}) 
+
 
 //TODO:=========task-05======Modal window===========
 /**
