@@ -1,23 +1,33 @@
 //! module 9
-// Створіть функцію, яка буде додавати данні в localStorage.
-
-// Створіть функцію, яка буде отримувати данні з localStorage.
-
-// Створіть функцію, яка буде видаляти всі значення з localStorage по ключу.
-
-// Створіть функцію, яка буде видаляти всі значення з localStorage.
-
-// Створіть функцію, яка буде повертати кількість елементів в localStorage
-
-// console.log(countLocalStorageEl());
-
-// Створіть функцію, яка буде повертати масив ключів з localStorage
-
-const themeSwitcher = document.getElementById('theme-switch');
-
+import { refs } from "./refs.js";
+import {
+  addDataToLocalstorage,
+  getDataFromLocalstorage,
+} from "./localStorage-api.js";
+import { LS_KEY } from "./keys.js";
 //TODO:====================01==========================
 // Зроби переключатель світлої і темної теми
+refs.checkbox.addEventListener("click", onCheckboxClick);
+document.addEventListener("DOMContentLoaded", renderPage);
 
+function onCheckboxClick(event) {
+  if (event.currentTarget.checked) {
+    refs.body.classList.replace("light", "dark");
+    addDataToLocalstorage(LS_KEY, "dark");
+  } else {
+    refs.body.classList.replace("dark", "light");
+    addDataToLocalstorage(LS_KEY, "light");
+  }
+}
+
+function renderPage() {
+  if (getDataFromLocalstorage(LS_KEY) === "dark") {
+    refs.body.classList.replace("light", "dark");
+    refs.checkbox.checked = true;
+  } else {
+    refs.body.classList.replace("dark", "light");
+  }
+}
 //TODO:====================02==========================
 // Напиши скрипт для віджета календаря. В кінцевому результаті повинна відображатися сьогоднішня дата у календарику. Використовуй new Date() для отримання поточного року, місяця, дня тижня та самого дня. Задай відповідні дані у відповідні елементи на html сторінці.
 
