@@ -5,6 +5,7 @@ import {
   getDataFromLocalstorage,
 } from "./localStorage-api.js";
 import { LS_KEY } from "./keys.js";
+import { createDate, getAge } from "./helpersFunctions.js";
 //TODO:====================01==========================
 // Зроби переключатель світлої і темної теми
 refs.checkbox.addEventListener("click", onCheckboxClick);
@@ -28,12 +29,33 @@ function renderPage() {
     refs.body.classList.replace("dark", "light");
   }
 }
-//TODO:====================02==========================
-// Напиши скрипт для віджета календаря. В кінцевому результаті повинна відображатися сьогоднішня дата у календарику. Використовуй new Date() для отримання поточного року, місяця, дня тижня та самого дня. Задай відповідні дані у відповідні елементи на html сторінці.
 
 //!module 10
 //TODO:====================01==========================
 // Потрібно створити калькулятор віку. Є контейнер з заголовком "калькулятором віку" і input з введенням дати. Якщо ми натиснемо на input дати, ми зможемо вибрати дату нашого дня народження. Наприклад, якщо ми виберемо дату 17.06.1998 року і натиснемо на "Розрахувати вік", побачимо, що вік розраховується на основі цієї дати і нам у результаті покажеться, що Your age is 25 years old; Якщо нічого не введено, то виводь alert("Please enter your birthday")Використовуй доповіжні функції для роботи.
+
+refs.ageBtn.addEventListener('click', onClick)
+
+function onClick(event) {
+  const clientData = new Date(refs.inputDate.value)
+  const currentDate = new Date()
+  const diff = currentDate - clientData
+  const result = getAge(diff)
+  refs.outputAge.textContent = `Your age is ${result} years old`
+}
+
+//TODO:====================02==========================
+// Напиши скрипт для віджета календаря. В кінцевому результаті повинна відображатися сьогоднішня дата у календарику. Використовуй new Date() для отримання поточного року, місяця, дня тижня та самого дня. Задай відповідні дані у відповідні елементи на html сторінці.
+
+document.addEventListener('DOMContentLoaded', renderCalendar)
+
+function renderCalendar(event) {
+  const {currentMonth, currentDay, currentWeekday, currentYear} = createDate();
+  refs.calendarContainer.querySelector('.js-month').textContent = currentMonth;
+  refs.calendarContainer.querySelector('.js-day-number').textContent = currentDay;
+  refs.calendarContainer.querySelector('.js-day').textContent = currentWeekday;
+  refs.calendarContainer.querySelector('.js-year').textContent = currentYear;
+}
 
 //* promise
 //TODO:====================01==========================
